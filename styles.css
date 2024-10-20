@@ -1,0 +1,22 @@
+
+.navbar{
+    margin-right: 10% !important;
+}
+.fa-instagram{
+    font-size: larger;
+}
+.dropdown{
+    margin-left: 5px;
+}
+.card__header{
+    padding: 0 15px;
+}
+.card-img {
+    width: 100%; 
+    height: 250px; 
+    
+}
+.card-img__tab2{
+    width: 100%;
+    height: 400px;
+}
