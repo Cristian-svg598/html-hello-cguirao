@@ -12,21 +12,50 @@
 </head>
 
 <body>
-    <div class="instagram_feed">
+    <div class="instagram-feed">
         <div class="instagram_feed__nav ">
             <nav class="navbar bg-body-tertiary d-flex ">
                 <div class="container-fluid ">
                     <div class="instagram_feed__nav__left">
-                        <i class="fa-brands fa-instagram"></i>
-                        <span>Instagram</span>
+                        <i class="fa-brands fa-instagram fs-3"></i>
+                        <span class="fs-3">Instagram</span>
                     </div>
                     <div class="instagram_feed__nav__rigth d-flex ">
                         <button type="button" class="btn btn-primary bg-success" data-bs-toggle="modal"
                             data-bs-target="#newPost">
                             Create a new post
                         </button>
-                        <div class="dropdown">
-                            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
+
+                         <!-- Modal Content-->
+                            <div class="modal fade" id="newPost" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Create a new post</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <label>Caption:</label>
+                                            <br>
+                                            <textarea id="comentario" name="comentario" rows="4" cols="50"
+                                                placeholder="Add the caption on your post here"></textarea>
+                                            <br>
+                                            <button type="button" class="btn btn-outline-dark">
+                                                <i class="fa-solid fa-camera"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-outline-dark">
+                                                <i class="fa-solid fa-location-dot"></i>
+                                            </button>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary bg-success">Publish</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <div class="dropdown ">
+                            <button type="button" class="btn btn-secondary dropdown-toggle ms-2" data-bs-toggle="dropdown"
                                 data-bs-display="static" aria-expanded="false">
                                 <i class="fa-solid fa-gear"></i>
                             </button>
@@ -34,7 +63,9 @@
                                 <li><a class="dropdown-item" href="#">Profile</a></li>
                                 <li><a class="dropdown-item" href="#">Accesibility</a></li>
                                 <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
-                                <li><hr class="dropdown-divider"></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
                                 <li><a class="dropdown-item" href="#">Log Out</a></li>
                             </ul>
                         </div>
@@ -43,51 +74,24 @@
                 </div>
             </nav>
         </div>
-        <div class="instagram_feed__body d-flex justify-content-center">
-            <!-- Nav tabs -->
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1"
-                        type="button" role="tab" aria-controls="tab1" aria-selected="true">
-                        <i class="fa-solid fa-table-cells"></i>
-                    </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="tab2-tab" data-bs-toggle="tab" data-bs-target="#tab2" type="button"
-                        role="tab" aria-controls="tab2" aria-selected="false">
-                        <i class="fa-solid fa-square"></i>
-                    </button>
-                </li>
-            </ul>
-        </div>
     </div>
-    <!-- Modal -->
-    <div class="modal fade" id="newPost" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Create a new post</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <label>Caption:</label>
-                    <br>
-                    <textarea id="comentario" name="comentario" rows="4" cols="50"
-                        placeholder="Add the caption on your post here"></textarea>
-                    <br>
-                    <button class="modal-body__photo">
-                        <i class="fa-solid fa-camera"></i>
-                    </button>
-                    <button class="modal-body__ubicacion">
-                        <i class="fa-solid fa-location-dot"></i>
-                    </button>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary bg-success">Publish</button>
-                </div>
-            </div>
-        </div>
+
+    <div class="instagram_feed__body d-flex justify-content-center">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1" type="button"
+                    role="tab" aria-controls="tab1" aria-selected="true">
+                    <i class="fa-solid fa-table-cells"></i>
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="tab2-tab" data-bs-toggle="tab" data-bs-target="#tab2" type="button"
+                    role="tab" aria-controls="tab2" aria-selected="false">
+                    <i class="fa-solid fa-square"></i>
+                </button>
+            </li>
+        </ul>
     </div>
 
     <!-- Tab content -->
@@ -96,141 +100,130 @@
         <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
             <div class="row d-flex  ">
                 <!-- Publicación 1 -->
-                <div class="col-md-4 mb-2">
-                    <div class="card">
-                        <img src="img/spark.jpg" class="card-img" alt="...">
-                    </div>
+                <div class="col-4 publicacion mb-3">
+                    <img src="img/spark.jpg" alt="...">
                 </div>
                 <!-- Publicación 2 -->
-                <div class="col-md-4 mb-2">
-                    <div class="card">
-                        <img src="img/Croacia.jpg" class="card-img" alt="...">
-                    </div>
+                <div class="col-4  publicacion mb-3">
+                    <img src="img/Croacia.jpg" alt="...">
                 </div>
                 <!-- Publicación 3 -->
-                <div class="col-md-4 mb-2">
-                    <div class="card">
-                        <img src="img/Cristiano.jpg" class="card-img" alt="...">
-                    </div>
+                <div class="col-4  publicacion mb-3">
+                    <img src="img/Cristiano.jpg" class="card-img" alt="...">
                 </div>
                 <!-- Publicación 4 -->
-                <div class="col-md-4 mb-2">
-                    <div class="card">
-                        <img src="img/crisyx.jpg" class="card-img" alt="...">
-                    </div>
+                <div class="col-4  publicacion mb-3">
+                    <img src="img/crisyx.jpg" class="card-img" alt="...">
                 </div>
                 <!-- Publicación 5 -->
-                <div class="col-md-4 mb-2">
-                    <div class="card">
-                        <img src="img/leyendas.jpg" class="card-img" alt="...">
-                    </div>
+                <div class="col-4  publicacion mb-3">
+                    <img src="img/leyendas.jpg" class="card-img" alt="...">
                 </div>
                 <!-- Publicación 6 -->
-                <div class="col-md-4 mb-2">
-                    <div class="card">
-                        <img src="img/viaje.jpg" class="card-img" alt="...">
-                    </div>
+                <div class="col-4  publicacion mb-3">
+                    <img src="img/viaje.jpg" class="card-img" alt="...">
                 </div>
-                
+                <!-- Publicación 7 -->
+                <div class="col-4  publicacion mb-3">
+                    <img src="img/Cumple.jpg" class="card-img" alt="...">
+                </div>
             </div>
         </div>
-
+    
+    
         <!-- Pestaña 2: Publicaciones en una sola columna por fila -->
         <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
             <div class="row m-5 d-flex flex-column align-items-center">
                 <!-- Publicación 1 -->
-                <div class="col-md-6 mb-3">
-                    <div class="card">
-                        <div class="card__header d-flex justify-content-between">
-                            <p>My crazy dog spark!</p>
-                            <p>08/26</p>
-                        </div>
-                        <img src="img/spark.jpg" class="card-img__tab2" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title"><b>204 Likes</b></h5>
-                            <p class="card-text">Este es el contenido de la publicación 1.</p>
-                        </div>
+                <div class="col-6 publicacion2 mb-3">
+                    <div class="card__header d-flex justify-content-between">
+                        <p class="fs-2"><b> My crazy dog spark! </b></p>
+                        <p><b>08/26 </b></p>
+                    </div>
+                    <img src="img/spark.jpg" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><b>204 Likes</b></h5>
+                        <p class="card-text">Este es el contenido de la publicación 1.</p>
                     </div>
                 </div>
-        
                 <!-- Publicación 2 -->
-                <div class="col-md-6 mb-3"> 
-                    <div class="card">
-                        <div class="card__header d-flex justify-content-between">
-                            <p>The greatness of Croatia</p>
-                            <p>04/09</p>
-                        </div>
-                        <img src="img/Croacia.jpg" class="card-img__tab2" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title"><b>123456 Likes</b></h5>
-                            <p class="card-text">Este es el contenido de la publicación 2.</p>
-                        </div>
+                <div class="col-6 publicacion2 mb-3">
+                    <div class="card__header d-flex justify-content-between">
+                        <p class="fs-2"> <b>The greatness of Croatia</b> </p>
+                        <p><b> 04/09 </b></p>
+                    </div>
+                    <img src="img/Croacia.jpg" class="card-img__tab2" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><b>123456 Likes</b></h5>
+                        <p class="card-text">Este es el contenido de la publicación 2.</p>
                     </div>
                 </div>
-        
                 <!-- Publicación 3 -->
-                <div class="col-md-6 mb-3"> 
-                    <div class="card">
-                        <div class="card__header d-flex justify-content-between">
-                            <p>Amazing goal by Cristiano!</p>
-                            <p>06/10</p>
-                        </div>
-                        <img src="img/Cristiano.jpg" class="card-img__tab2" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title"><b>987 Likes</b></h5>
-                            <p class="card-text">Este es el contenido de la publicación 3.</p>
-                        </div>
+                <div class="col-6 publicacion2 mb-3">
+                    <div class="card__header d-flex justify-content-between">
+                        <p class="fs-2"> <b>Amazing goal by Cristiano!</b></p>
+                        <p>06/10</p>
+                    </div>
+                    <img src="img/Cristiano.jpg" class="card-img__tab2" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><b>987 Likes</b></h5>
+                        <p class="card-text">Este es el contenido de la publicación 3.</p>
                     </div>
                 </div>
-
+    
                 <!-- Publicación 4 -->
-                <div class="col-md-6 mb-3"> 
-                    <div class="card">
-                        <div class="card__header d-flex justify-content-between">
-                            <p>Amazing goal by Cristiano!</p>
-                            <p>06/10</p>
-                        </div>
-                        <img src="img/crisyx.jpg" class="card-img__tab2" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title"><b>200 Likes</b></h5>
-                            <p class="card-text">Viciadisimo a este grupo.</p>
-                        </div>
+                <div class="col-6 publicacion2 mb-3">
+                    <div class="card__header d-flex justify-content-between">
+                        <p class="fs-2"><b>Crisyx de lo mejor</b></p>
+                        <p>06/10</p>
+                    </div>
+                    <img src="img/crisyx.jpg" class="card-img__tab2" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><b>200 Likes</b></h5>
+                        <p class="card-text">Viciadisimo a este grupo.</p>
                     </div>
                 </div>
                 <!-- Publicación 5 -->
-                <div class="col-md-6 mb-3"> 
-                    <div class="card">
-                        <div class="card__header d-flex justify-content-between">
-                            <p>Amazing goal by Cristiano!</p>
-                            <p>06/10</p>
-                        </div>
-                        <img src="img/leyendas.jpg" class="card-img__tab2" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title"><b>345 Likes</b></h5>
-                            <p class="card-text">De nuevo siendo parte de las leyenas.</p>
-                        </div>
+                <div class="col-6 publicacion2 mb-3">
+                    <div class="card__header d-flex justify-content-between">
+                        <p class="fs-2"><b>Un clásico</b></p>
+                        <p>06/10</p>
+                    </div>
+                    <img src="img/leyendas.jpg" class="card-img__tab2" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><b>345 Likes</b></h5>
+                        <p class="card-text">De nuevo siendo parte de las leyenas.</p>
                     </div>
                 </div>
                 <!-- Publicación 6 -->
-                <div class="col-md-6 mb-3"> 
-                    <div class="card">
-                        <div class="card__header d-flex justify-content-between">
-                            <p>Amazing goal by Cristiano!</p>
-                            <p>06/10</p>
-                        </div>
-                        <img src="img/viaje.jpg" class="card-img__tab2" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title"><b>987 Likes</b></h5>
-                            <p class="card-text">¿Un viajecito por el mundo?</p>
-                        </div>
+                <div class="col-6 publicacion2 mb-3">
+                    <div class="card__header d-flex justify-content-between">
+                        <p class="fs-2"><b>Un buen viaje ayuda a cualquiera</b></p>
+                        <p>06/10</p>
+                    </div>
+                    <img src="img/viaje.jpg" class="card-img__tab2" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><b>987 Likes</b></h5>
+                        <p class="card-text">¿Un viajecito por el mundo?</p>
                     </div>
                 </div>
-
+    
+                <!-- Publicación 7 -->
+                <div class="col-6 publicacion2 mb-3">
+                    <div class="card__header d-flex justify-content-between">
+                        <p class="fs-2"><b>Feliz cumple!!</b></p>
+                        <p>06/10</p>
+                    </div>
+                    <img src="img/Cumple.jpg" class="card-img__tab2" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><b>987 Likes</b></h5>
+                        <p class="card-text">¿Un viajecito por el mundo?</p>
+                    </div>
+                </div>
             </div>
         </div>
+    
     </div>
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>

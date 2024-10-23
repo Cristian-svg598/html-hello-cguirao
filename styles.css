@@ -1,18 +1,24 @@
 
-
-.fa-instagram{
-    font-size: larger;
-}
-.dropdown{
-    margin-left: 5px;
+.row {
+    margin: 0;
+    padding: 0 ;
 }
 
-.card-img {
-    width: 100%; 
-    height: 250px; 
-    
+.publicacion{
+    max-width: 33%;
+    max-height: 600px;
 }
-.card-img__tab2{
+.publicacion img{
     width: 100%;
-    height: 400px;
+    height: 100%;
+}
+
+
+.publicacion2{
+    max-width: 33%;
+    max-height: 100%;
+}
+.publicacion2 img{
+    width: 100%;
+    height: 100%;
 }
